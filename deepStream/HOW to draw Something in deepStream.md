@@ -12,7 +12,7 @@ vi deepstream_app_main.c
 
 ## Open deepstream_app_main.c
 
-- 해당 파일을 수정
+- 해당 파일을 참조
 
 ```sh
 # find static gboolean overlay_graphics (AppCtx * appCtx, GstBuffer * buf,NvDsBatchMeta * batch_meta, guint index); FUNC.
