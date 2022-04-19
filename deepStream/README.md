@@ -277,5 +277,4 @@ file-loop=0
 
 
 ## 동작 결과
-![결과](deepStream/image/deepStream_yolov3.png)
-
+![deepStream_yolov3](https://user-images.githubusercontent.com/71128226/163958465-cb4c2a90-8d82-48aa-94a5-47c0a17bd1e1.png)
