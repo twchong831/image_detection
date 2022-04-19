@@ -52,7 +52,9 @@ sudo apt-get install deepstream-6.0
 ## SDK Path
 
 ```sh
-/opt/nvidia/deepstream/deepstream-6.0/
+/opt/nvidia/deepstream/deepstream-6.0/ # basic path
+/opt/nvidia/deepstream/deepstream-6.0/sources/apps/sample_apps/deepstream-app # example program path
+/opt/nvidia/deepstream/deepstream-6.0/sources/objectDetector_Yolo	# YOLO example 
 ```
 
 - 해당 폴더에서 수행해도 되지만,
@@ -60,23 +62,45 @@ sudo apt-get install deepstream-6.0
 
 
 
+## deepStream-app
+
+- SDK에서 제공하는 예제
+- YOLO 와 같은 별도의 데이터셋을 이용한 객체인식 결과를 확인할 수 있음
+
+```sh
+/opt/nvidia/deepstream/deepstream-6.0/sources/apps/sample_apps/deepstream-app # example program path
+```
+
+- 해당 폴더의 파일을 수정하면 deepstream-app 프로그램을 수정할 수 있음
+
+### make 
+
+```sh
+#if root
+sudo make CUDA_VER=10.2 install	#copy active file to bin dir.
+# or only build
+make CUDA_VER=10.2 all
+```
+
+
+
 ## deepStream with YOLOv3
 
 ```shell
-cd [path]/deepstream/deepstream-6.0/sources/objectDetector_Yolo
+cd /opt/nvidia/deepstream/deepstream-6.0/sources/objectDetector_Yolo	# YOLO example 
 ```
 
 - 해당 폴더의 config 파일을 이용하여 YOLO 기반 객체인식 예제 실행
 - 해당 폴더로 이동
 
 ```shell
-./prebuild.sh
+./prebuild.sh # download YOLO weight files
 ```
 
 - 해당 shell script를 동작시키면 yoloV2,V3의 weight 등을 다운로드 함.
 
 ```shell
-cd ./nvdsinfer_custom_impl_Yolo
+cd ./nvdsinfer_custom_impl_Yolo # compile extra lib. for yolo
 make all
 ```
 - YOLO와 연결을 위한 추가 라이브러리 빌드
@@ -94,14 +118,14 @@ make		# if make in root Dir, "sudo CUDA_VER=10.2 make"
 ## Active App
 
 ```shell
-cd [path]/deepstream/deepstream-6.0/bin
+cd /opt/nvidia/deepstream/deepstream-6.0/bin
 ```
 
 - 예제 프로그램이 모여있음
 - yolo 예제를 실행하기 위해서는 다음과 같이 입력
 
 ```shell
-deepstream-app -c ../sources/objectDetector_Yolo/deepstream_app_config_yoloV3.txt
+deepstream-app -c [path]/sources/objectDetector_Yolo/deepstream_app_config_yoloV3.txt # yolov3 active
 ```
 
 - 실행파일이 root 내에 위치함으로 프로그램명을 입력하여 구동 가능
