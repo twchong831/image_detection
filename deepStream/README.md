@@ -33,8 +33,8 @@ git reset --hard 7101c2310341ab3f4675fc565f64f0967e135a6a
 ./configure
 make
 sudo make install
-sudo mkdir -p /opt/nvidia/deepstream/deepstream-5.1/lib
-sudo cp /usr/local/lib/librdkafka* /opt/nvidia/deepstream/deepstream-5.1/lib
+sudo mkdir -p /opt/nvidia/deepstream/deepstream-6.0/lib
+sudo cp /usr/local/lib/librdkafka* /opt/nvidia/deepstream/deepstream-6.0/lib
 ```
 
 ### deepStream sdk
@@ -66,6 +66,7 @@ sudo apt-get install deepstream-6.0
 cd [path]/deepstream/deepstream-6.0/sources/objectDetector_Yolo
 ```
 
+- 해당 폴더의 config 파일을 이용하여 YOLO 기반 객체인식 예제 실행
 - 해당 폴더로 이동
 
 ```shell
@@ -76,8 +77,9 @@ cd [path]/deepstream/deepstream-6.0/sources/objectDetector_Yolo
 
 ```shell
 cd ./nvdsinfer_custom_impl_Yolo
+make all
 ```
-
+- YOLO와 연결을 위한 추가 라이브러리 빌드
 - 해당 폴더로 이동
 - 해당 폴더에서 make 수행
 
@@ -101,6 +103,8 @@ cd [path]/deepstream/deepstream-6.0/bin
 ```shell
 deepstream-app -c ../sources/objectDetector_Yolo/deepstream_app_config_yoloV3.txt
 ```
+
+- 실행파일이 root 내에 위치함으로 프로그램명을 입력하여 구동 가능
 
 - ERROR : yolo 
 
