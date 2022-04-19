@@ -84,22 +84,21 @@ overlay_graphics (AppCtx * appCtx, GstBuffer * buf,
 ```c
 void example_draw(NvDsBatchMeta * batch_meta)
 {
-	NvDsDisplayMeta *display_meta = nvds_acquire_display_meta_from_pool (batch_meta);
-    
-    float p1[2] = {0, 0};
-    float p2[2] = {100, 100};
+	NvDsDisplayMeta *display_meta = nvds_acquire_display_meta_from_pool (batch_meta);    
+	
+	float p1[2] = {0, 0};
+	float p2[2] = {100, 100};
 
 	NvOSD_LineParams *line_params = display_meta->line_params;
 	line_params[display_meta->num_lines].x1 = p1[0];
-    //for demonstration, user need to se these values
+	
 	line_params[display_meta->num_lines].y1 = p1[1];
-    line_params[display_meta->num_lines].x2 = p2[0];
-    line_params[display_meta->num_lines].y2 = p2[1];
-    line_params[display_meta->num_lines].line_width = 8;
-    
-    line_params[display_meta->num_lines].line_color = NvOSD_ColorParams{1.0, 1.0, 1.0, 1.0};
-    // color { r, g, b, A }
-
+	line_params[display_meta->num_lines].x2 = p2[0];
+	line_params[display_meta->num_lines].y2 = p2[1];
+	line_params[display_meta->num_lines].line_width = 8;
+	
+	line_params[display_meta->num_lines].line_color = NvOSD_ColorParams{1.0, 1.0, 1.0, 1.0}; // color { r, g, b, A }
+	
 	display_meta->num_lines++;	//must be increase index
 }
 ```
