@@ -1,4 +1,4 @@
-# deepStream 
+# deepStream-SDK
 
 platfrom : Jetson Xavier
 
@@ -277,4 +277,5 @@ file-loop=0
 
 
 ## 동작 결과
+![결과](deepStream/image/deepStream_yolov3.png)
 
