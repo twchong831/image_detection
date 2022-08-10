@@ -138,7 +138,11 @@ deepstream-app -c [path]/sources/objectDetector_Yolo/deepstream_app_config_yoloV
   ```shell
   cp [path]/deepstream/deepstream-6.0/sources/objectDetector_Yolo/yolo* [path]/deepstream-[ver]/bin/
   ```
-
+  - ERROR : nvdsinfer_custom_impl_Yolo
+  ```shell
+  cd /opt/nvidia/deepstream/deepstream-[version]/sources/objectDetector_Yolo/nvdsinfer_custom_impl_Yolo/
+  sudo make CUDA_VER=[ver] all
+  ```
   
 
 - Delay : Building tensorRT engine 
