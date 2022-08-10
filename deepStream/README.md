@@ -21,7 +21,7 @@ gstreamer1.0-plugins-bad \
 gstreamer1.0-plugins-ugly \
 gstreamer1.0-libav \
 libgstrtspserver-1.0-dev \
-libjansson4
+libjson-glib-dev
 ```
 
 ### librdkafka
